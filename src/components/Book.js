@@ -1,22 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Book = (props) => {
-	return (
-		<tr>
-			<td>{props.book.id}</td>
-			<td>{props.book.title}</td>
-			<td>{props.book.category}</td>
-		</tr>
-	)
-};
+const Book = ({ book }) => (
+  <tr>
+    <td>{book.id}</td>
+    <td>{book.title}</td>
+    <td>{book.category}</td>
+  </tr>
+);
 
 Book.propTypes = {
-	book: PropTypes.object({
-		id: PropTypes.number.isRequired,
-		title: PropTypes.string.isRequired,
-		category: PropTypes.string.isRequired
-	})
-}
+  book: PropTypes.instanceOf(Object)({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default Book;
