@@ -2,19 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = ({ book }) => (
-  <tr>
-    <td>{book.id}</td>
-    <td>{book.title}</td>
-    <td>{book.category}</td>
-  </tr>
+  <tbody key={book.id}>
+    <tr>
+      <td>{book.id}</td>
+      <td>{book.title}</td>
+      <td>{book.category}</td>
+    </tr>
+  </tbody>
 );
 
 Book.propTypes = {
-  book: PropTypes.instanceOf(Object)({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-  }).isRequired,
+  book: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default Book;
