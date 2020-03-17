@@ -6,13 +6,14 @@ const BooksForm = () => {
   /* eslint-disable jsx-a11y/label-has-associated-control */
   return (
     <form action="">
-      <label>Title:</label>
+      <label htmlFor="title">Title:</label>
       <input type="text" id="title" />
 
-      <label>Category:</label>
+      <label htmlFor="category">Category:</label>
       <select id="category">
         { categories.map(category => <option value={category} key={`${category}_option`}>{category}</option>)}
       </select>
+      <button type="submit">Submit</button>
     </form>
   );
 };
