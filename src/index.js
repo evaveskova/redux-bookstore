@@ -1,9 +1,28 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import App from './App';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import App from './components/App';
 
-// ReactDOM.render(<App />, document.getElementById('root'));
+const initialState = () => ({
+	books: [{
+		id: 1,
+		title: "test title",
+		category: "test category"
+	},
+	{
+		id: 2,
+		title: "test title 2",
+		category: "test category 2"
+	},
+	]
+});
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+const store = createStore(initialState);
+console.log()
+ReactDOM.render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
+);
