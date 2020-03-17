@@ -1,6 +1,12 @@
 # Redux Bookstore CMS
 This project is currently in development.
 
+## Tools Used:
+- Javascript
+- HTML
+-	React
+- Redux
+
 ### Live Demo
 
 To view the app on Heroku, [click here](https://redux-bookstore-veskova.herokuapp.com/).
