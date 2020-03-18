@@ -6,7 +6,6 @@ import { removeBook } from '../actions';
 
 const BooksList = ({ books, removeBook }) => {
   const handleRemoveBook = book => {
-    console.log('remove-book');
     removeBook(book);
   };
 
@@ -30,6 +29,7 @@ const BooksList = ({ books, removeBook }) => {
 
 BooksList.propTypes = {
   books: PropTypes.instanceOf(Array).isRequired,
+  removeBook: PropTypes.func.isRequired,
 };
 
 function mapStateToProps(state) {

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const Book = ({ book, removeBook }) => {
   const handleRemoveBook = () => {
-    console.log('remove-book');
     removeBook(book);
   };
 
@@ -13,7 +12,7 @@ const Book = ({ book, removeBook }) => {
         <td>{book.id}</td>
         <td>{book.title}</td>
         <td>{book.category}</td>
-        <td><button className="remove" onClick={handleRemoveBook}>Remove Book</button></td>
+        <td><button className="remove" onClick={handleRemoveBook} type="button">Remove Book</button></td>
       </tr>
     </tbody>
   );

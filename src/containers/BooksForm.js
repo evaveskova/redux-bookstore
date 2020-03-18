@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions/index';
 
@@ -27,9 +28,11 @@ class BooksForm extends React.Component {
   }
 
   handleSubmit(event) {
-		event.preventDefault();
-    if (this.state.title) {      
-      this.props.createBook(this.state);
+    event.preventDefault();
+    const { title } = this.state;
+    const { createBook } = this.props;
+    if (title) {
+      createBook(this.state);
       this.clearState();
     }
   }
@@ -44,25 +47,30 @@ class BooksForm extends React.Component {
 
   render() {
     const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+    const { title, category } = this.state;
 
-	  return (
-  <form onSubmit={this.handleSubmit}>
-    <label htmlFor="title" id="title-form-label">
-      Title:
-      <input type="text" id="title" onChange={this.handleChange} value={this.state.title} />
-    </label>
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label htmlFor="title" id="title-form-label">
+          Title:
+          <input type="text" id="title" onChange={this.handleChange} value={title} />
+        </label>
 
-    <label htmlFor="category" id="category-form-label">
-      Category:
-      <select id="category" onChange={this.handleChange} value={this.state.category}>
-        { categories.map(category => <option value={category} key={`${category}_option`}>{category}</option>)}
-      </select>
-    </label>
-    <button type="submit">Submit</button>
-  </form>
-	  );
+        <label htmlFor="category" id="category-form-label">
+          Category:
+          <select id="category" onChange={this.handleChange} value={category}>
+            { categories.map(category => <option value={category} key={`${category}_option`}>{category}</option>)}
+          </select>
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    );
   }
 }
+
+BooksForm.propTypes = {
+  createBook: PropTypes.func.isRequired,
+};
 
 const mapDispatchToProps = dispatch => ({
   createBook: book => dispatch(createBook(book)),
