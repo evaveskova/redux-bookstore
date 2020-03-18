@@ -25,7 +25,7 @@ BooksList.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    books: state.booksList,
+    books: state.books,
   };
 }
 

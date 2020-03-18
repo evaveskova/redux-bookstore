@@ -5,7 +5,23 @@ import { createStore } from 'redux';
 import combineReducers from './reducers';
 import App from './components/App';
 
-const store = createStore(combineReducers);
+const initialState = {
+  books: [
+	{
+    id: 1,
+    title: 'test title',
+    category: 'test category',
+  },
+  {
+    id: 2,
+    title: 'test title 2',
+    category: 'test category 2',
+  },
+  ]
+};
+
+const store = createStore(combineReducers, initialState);
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createBook } from '../actions'
+import { createBook } from '../actions/index'
 
 class BooksForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			id: Math.floor(Math.random() * 100),
 			title: '',
 			category: ''
 		};
@@ -26,20 +27,23 @@ class BooksForm extends React.Component {
 	}
 
 	handleSubmit(event) {
-		event.preventDefault();
-		// The component should implement handleSubmit which will save the new book
-		// in the Redux store and resets the component’s state.
+		event.preventDefault();		
 		createBook(this.state);
+		console.log("createBook executed", this.state)
+		this.clearState();
+	}
+
+	clearState() {
 		this.setState({
-			book: '',
+			id: Math.floor(Math.random() * 1000),
+			title: '',
 			category: ''
 		})
 	}
 
 	render() {
 		const categories = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
-		console.log("title = ", this.state.title)
-		console.log("category = ", this.state.category)
+
 	  return (
 	    <form onSubmit={this.handleSubmit}>
 	      <label htmlFor="title" id="title-form-label">
@@ -63,4 +67,4 @@ const mapDispatchToProps = dispatch => ({
 	createBook: book => dispatch(createBook(book))
 })
 
-export default connect(mapDispatchToProps)(BooksForm);
+export default connect(null, mapDispatchToProps)(BooksForm);

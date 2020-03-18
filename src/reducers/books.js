@@ -1,19 +1,19 @@
-const booksReducer = (state = null, action) => {
-  const CREATE_BOOK = 'CREATE_BOOK';
-  const REMOVE_BOOK = 'REMOVE_BOOK';
+const CREATE_BOOK = 'CREATE_BOOK';
+const REMOVE_BOOK = 'REMOVE_BOOK';
+
+const booksReducer = (state = [], action) => {
+
+	console.log("booksReducer called", action)
 
   switch (action.type) {
     case CREATE_BOOK:
-			return action.book
-      break;
+			console.log("hello world");
+			return { ...state, books: [...state.books, action.book] };
     case REMOVE_BOOK:
-			console.log("x")
       break;
     default:
-			console.log("y")
       break;
   }
-	console.log("z")
   return state;
 };
 
