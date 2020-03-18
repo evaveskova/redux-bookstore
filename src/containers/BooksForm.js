@@ -8,7 +8,7 @@ class BooksForm extends React.Component {
 		this.state = {
 			id: Math.floor(Math.random() * 100),
 			title: '',
-			category: ''
+			category: 'Action'
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,10 +27,11 @@ class BooksForm extends React.Component {
 	}
 
 	handleSubmit(event) {
-		event.preventDefault();		
-		createBook(this.state);
-		console.log("createBook executed", this.state)
-		this.clearState();
+		if (this.state.title) {
+			event.preventDefault();
+			this.props.createBook(this.state);
+			this.clearState();
+		}		
 	}
 
 	clearState() {

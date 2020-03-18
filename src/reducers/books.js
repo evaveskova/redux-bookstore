@@ -7,7 +7,7 @@ const booksReducer = (state = [], action) => {
   switch (action.type) {
     case CREATE_BOOK:
       console.log("hello world");
-			return [ ...state, { books: [...state.books, action.book] }];
+			return [ ...state, action.book ];
     case REMOVE_BOOK:
       break;
     default:
