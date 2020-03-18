@@ -1,5 +1,4 @@
-const CREATE_BOOK = 'CREATE_BOOK';
-const REMOVE_BOOK = 'REMOVE_BOOK';
+import { CREATE_BOOK, REMOVE_BOOK } from '../actions';
 
 const booksReducer = (state = [], action) => {
 
@@ -7,8 +6,8 @@ const booksReducer = (state = [], action) => {
 
   switch (action.type) {
     case CREATE_BOOK:
-			console.log("hello world");
-			return { ...state, books: [...state.books, action.book] };
+      console.log("hello world");
+			return [ ...state, { books: [...state.books, action.book] }];
     case REMOVE_BOOK:
       break;
     default:
