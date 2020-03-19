@@ -1,16 +1,12 @@
-const bookReducers = () => {
-  const createBook = book => ({
-    type: 'CREATE_BOOK',
-    book,
-  });
+export const CREATE_BOOK = 'CREATE_BOOK';
+export const REMOVE_BOOK = 'REMOVE_BOOK';
 
-  const removeBook = book => ({
-    type: 'REMOVE_BOOK',
-    book,
-  });
+export const createBook = book => ({
+  type: CREATE_BOOK,
+  book,
+});
 
-  createBook();
-  removeBook();
-};
-
-export default bookReducers;
+export const removeBook = book => ({
+  type: REMOVE_BOOK,
+  book,
+});

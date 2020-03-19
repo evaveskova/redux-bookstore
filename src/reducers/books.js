@@ -1,16 +1,15 @@
-const books = (state = null, action) => {
-  const CREATE_BOOK = 'CREATE_BOOK';
-  const REMOVE_BOOK = 'REMOVE_BOOK';
+import { CREATE_BOOK, REMOVE_BOOK } from '../actions';
 
+const booksReducer = (state = [], action) => {
   switch (action.type) {
     case CREATE_BOOK:
-      break;
+      return [...state, action.book];
     case REMOVE_BOOK:
-      break;
+      return state.filter(book => book.id !== action.book.id);
     default:
       break;
   }
   return state;
 };
 
-export default books;
+export default booksReducer;
