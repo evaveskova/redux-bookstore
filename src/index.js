@@ -9,13 +9,18 @@ const initialState = {
   books: [
     {
       id: 1,
-      title: 'test title',
-      category: 'test category',
+      title: 'HistoryBook',
+      category: 'History',
     },
     {
       id: 2,
-      title: 'test title 2',
-      category: 'test category 2',
+      title: 'HorrorBook',
+      category: 'Horror',
+    },
+    {
+      id: 3,
+      title: 'BiographyBook',
+      category: 'Biography',
     },
   ],
 };
