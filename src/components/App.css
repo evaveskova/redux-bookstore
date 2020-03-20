@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab&display=swap');
+
+#books-list {
+	display: grid;
+}
+
+.book-item {
+	display: flex;
+	flex-direction: column;
+	margin: 50px;
+	padding: 30px;
+	width: 1200px;
+	height: max-content;
+	border-radius: 4px;
+	background-color: #ffffff;
+	font-family: 'Roboto Slab', serif;
+	border: solid black 1px;
+}
+
+.book-category {
+	width: 49px;
+  height: 18px;
+  opacity: 0.5;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: bold;
+  color: #121212;
+}
+
+.book-title {
+	margin: 0;
+	margin-bottom: 40px;
+	width: 197px;
+  height: 29px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.book-remove {
+	width: 54px;
+  height: 19px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #4386bf;
+}

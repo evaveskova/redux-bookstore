@@ -13,26 +13,16 @@ const BooksList = ({ books, filter, removeBook }) => {
   const filterBy = () => {
     const filteredBooks = (filter === 'All') ? books : books.filter(book => (book.category === filter));
     if (filteredBooks.length === 0) {
-      return <tbody><tr><td>No Books Found</td></tr></tbody>;
+      return <h1>No Books Found</h1>;
     }
     return filteredBooks.map(book => (
       <Book book={book} key={book.id} removeBook={handleRemoveBook} />));
   };
 
   return (
-    <div>
+    <div id="books-list">
       <CategoryFilter filter={filter} />
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Category</th>
-            <th>Remove Book</th>
-          </tr>
-        </thead>
-        { filterBy() }
-      </table>
+			{ filterBy() }
     </div>
   );
 };
