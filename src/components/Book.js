@@ -9,8 +9,8 @@ const Book = ({ book, removeBook }) => {
   return (
     <section className="book-item" key={book.id}>
       <span className="book-category">{book.category}</span>
-			<h3 className="book-title">{book.title}</h3>
-			<button className="book-remove" onClick={handleRemoveBook} type="button">Remove</button>
+      <h3 className="book-title">{book.title}</h3>
+      <button className="book-remove" onClick={handleRemoveBook} type="button">Remove</button>
     </section>
   );
 };

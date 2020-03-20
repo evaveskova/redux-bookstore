@@ -20,10 +20,17 @@ const BooksList = ({ books, filter, removeBook }) => {
   };
 
   return (
-    <div id="books-list">
-      <CategoryFilter filter={filter} />
-			{ filterBy() }
+    <div className="container">
+      <div id="nav">
+        <h1>BOOKSTORE CMS</h1>
+        <CategoryFilter filter={filter} />
+      </div>
+
+      <div id="books-list">
+        { filterBy() }
+      </div>
     </div>
+
   );
 };
 

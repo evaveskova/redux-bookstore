@@ -1,27 +1,56 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab&display=swap');
 
-#books-list {
-	display: grid;
+body {
+  background-color: #fafafa;
+}
+
+#nav {
+  width: 1400px;
+  height: 95px;
+  background-color: #ffffff;
+}
+
+h1 {
+  float: left;
+  margin-left: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  font-weight: bolder;
+  color: #0290ff;
+}
+
+#categories {
+  margin-left: 50px;
+  margin-top: 30px;
+  width: 105px;
+  height: 16px;
+  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1.9px;
+  color: #121212;
+  border: 0px;
+  background-color: #ffffff;
 }
 
 .book-item {
 	display: flex;
 	flex-direction: column;
-	margin: 50px;
+	margin: 20px 50px;
 	padding: 30px;
-	width: 1200px;
+  width: 1200px;
 	height: max-content;
 	border-radius: 4px;
 	background-color: #ffffff;
 	font-family: 'Roboto Slab', serif;
-	border: solid black 1px;
+	border: solid #e8e8e8 1px;
 }
 
 .book-category {
 	width: 49px;
   height: 18px;
   opacity: 0.5;
-  font-family: Montserrat;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: bold;
   color: #121212;
@@ -29,7 +58,7 @@
 
 .book-title {
 	margin: 0;
-	margin-bottom: 40px;
+	margin-bottom: 20px;
 	width: 197px;
   height: 29px;
   font-family: 'Roboto Slab', serif;
@@ -46,4 +75,66 @@
   font-size: 14px;
   font-weight: 300;
   color: #4386bf;
+  border: 0px;
+  background-color: inherit;
+}
+
+.book-remove:hover {
+  cursor: pointer;
+}
+
+#form-container {
+  margin: 0 50px;
+  border-top: solid 2px #e8e8e8;
+  width: 1262px;
+}
+
+#form-header {
+  width: 174px;
+  height: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: #888888;
+}
+
+#title {
+  width: 664px;
+  height: 45px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: #888888;
+}
+
+#category {
+  width: 285px;
+  height: 45px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.15px;
+  color: #c4c4c4;
+  margin-left: 22px;
+}
+
+#add-book-btn {
+  width: 184px;
+  height: 45px;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: 'Roboto Slab', serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #ffffff;
+  margin-left: 22px;
 }
