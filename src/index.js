@@ -9,18 +9,18 @@ const initialState = {
   books: [
     {
       id: 1,
-      title: 'HistoryBook',
+      title: 'The 1916 Rising',
       category: 'History',
     },
     {
       id: 2,
-      title: 'HorrorBook',
+      title: 'The Shining',
       category: 'Horror',
     },
     {
       id: 3,
-      title: 'BiographyBook',
-      category: 'Biography',
+      title: 'Interstellar',
+      category: 'Sci-Fi',
     },
   ],
 };
